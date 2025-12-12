@@ -1,0 +1,75 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <stdbool.h>
+#include <unistd.h>  
+
+#define MAX_ROUNDS 10
+#define NUM_BUTTONS 4
+
+int sequence[MAX_ROUNDS];
+int player_input[MAX_ROUNDS];
+
+void light_up_led(int led) {
+    printf("LED %d allumée\n", led);
+    usleep(500000);  // 500ms
+    printf("LED %d éteinte\n", led);
+}
+
+int read_button() {
+    int button;
+    printf("Appuie sur un bouton (0-3) : ");
+    scanf("%d", &button);
+    return button;
+}
+
+void generate_sequence(int round) {
+    sequence[round] = rand() % NUM_BUTTONS;
+}
+
+void display_sequence(int round) {
+    printf("\nSéquence :\n");
+    for (int i = 0; i <= round; i++) {
+        light_up_led(sequence[i]);
+        usleep(300000);  
+    }
+}
+
+bool check_player_input(int round) {
+    printf("\nEntre la séquence :\n");
+    for (int i = 0; i <= round; i++) {
+        player_input[i] = read_button();
+        if (player_input[i] != sequence[i]) {
+            printf("Erreur ! Fin de la partie.\n");
+            return false;
+        }
+    }
+    return true;
+}
+
+int main() {
+    srand(time(NULL));
+    int round = 0;
+    bool playing = true;
+
+    printf("=== Jeu Simon ===\n");
+
+    while (round < MAX_ROUNDS && playing) {
+        generate_sequence(round);
+        display_sequence(round);
+
+        playing = check_player_input(round);
+        if (playing) {
+            printf("Bravo ! Passage au niveau %d\n", round + 2);
+            usleep(1000000);
+        }
+
+        round++;
+    }
+
+    if (playing) {
+        printf("Félicitations ! Tu as complété tous les niveaux !\n");
+    }
+
+    return 0;
+}
