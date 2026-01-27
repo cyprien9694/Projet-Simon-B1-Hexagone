@@ -44,11 +44,12 @@ Le projet combine **électronique**, **programmation embarquée** et **conceptio
 
 * ESP32
 * Écran OLED
-* LED
-* Buzzer / haut-parleur
-* Boutons poussoirs
-* Boutons 3D
-* Breadboard et câblage
+* 4 LED
+* Buzzer
+* Interrupteur
+* 4 Boutons poussoirs
+* 4 Boutons 3D
+* Breadboard (pour test),soudage et câblage
 
 *(Un module audio optionnel était prévu pour une version future)*
 
