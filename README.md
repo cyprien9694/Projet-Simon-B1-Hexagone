@@ -25,8 +25,7 @@ Le projet combine **électronique**, **programmation embarquée** et **conceptio
 * Génération aléatoire de séquences
 * Affichage des informations sur :
 
-  * Écran **LCD** (état du jeu, messages)
-  * Écran **OLED** (retours visuels complémentaires)
+  * Écran **LCD** (menu du jeu,choix de la difficultée, ...)
 * Feedback joueur via :
 
   * **LED**
@@ -96,15 +95,9 @@ Le projet comprend les livrables suivants :
 
 ## 👨‍💻 Auteur
 
-Projet réalisé par **[Étudiant – École Hexagone]**
+Projet réalisé par **Cyprien Bidaud – Première année à l'École Hexagone**
 
 Année scolaire **2024–2025**
-
----
-
-## 📷 Aperçu
-
-*(Ajouter ici des photos du montage, des écrans et du prototype)*
 
 ---
 
