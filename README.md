@@ -44,7 +44,6 @@ Le projet combine **électronique**, **programmation embarquée** et **conceptio
 ## 🔧 Matériel utilisé
 
 * ESP32
-* Écran LCD
 * Écran OLED
 * LED
 * Buzzer / haut-parleur
